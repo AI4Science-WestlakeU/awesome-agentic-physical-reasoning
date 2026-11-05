@@ -44,51 +44,54 @@ The audit has a fixed scope, the same as the paper's (Section 3.2). A benchmark 
 
 Related work outside the scope, grouped by the criterion it misses. Most examples come from Section 3.2 and Appendix B of the paper.
 
-| Example | What it evaluates | Paper |
-|---|---|---|
-| **No interactive physics environment** · criterion 1 or 2 | | |
-| Physion | Predicting physical outcomes from videos | [paper](https://openreview.net/forum?id=CXyZrKPz4CU) |
-| Physion++ | Inferring physical properties from videos | [paper](https://openreview.net/forum?id=5Exz7eaBXH) |
-| ComPhy | Compositional physical reasoning about objects and events in videos | [paper](https://openreview.net/forum?id=PgNEYaIc81Q) |
-| CLEVR | Visual question answering on rendered scenes | [paper](https://doi.org/10.1109/cvpr.2017.215) |
-| IntPhys 2 | Judging whether videos are physically possible | [paper](https://arxiv.org/abs/2506.09849) |
-| GRASP | Language grounding and situated physics understanding in videos | [paper](https://doi.org/10.24963/ijcai.2024/696) |
-| PhyBlock | Block assembly plans, scored against annotations and never executed in a simulator | [paper](https://openreview.net/forum?id=z6WfQ43sHr) |
-| SWE-bench | Resolving GitHub issues | [paper](https://openreview.net/forum?id=VTF8yNQM66) |
-| WebArena | Tasks on websites | [paper](https://openreview.net/forum?id=oKn9c6ytLx) |
-| OSWorld | Tasks in real computer environments | [paper](https://openreview.net/forum?id=tN61DTr4Ed) |
-| AgentBench | LLM agents across software, game, and web environments | [paper](https://openreview.net/forum?id=zAdUB0aCTQ) |
-| GAIA | Questions for general AI assistants | [paper](https://openreview.net/forum?id=fibxvahvs3) |
-| ToolBench | Using real-world APIs | [paper](https://openreview.net/forum?id=dHng2O0Jjr) |
-| PhysReason | Physics problem solving, scored against reference answers and solution steps | [paper](https://doi.org/10.18653/v1/2025.acl-long.811) |
-| PHYBench | Physics problem solving, scored against reference answers | [paper](https://doi.org/10.52202/085713-0044) |
-| UGPhysics | Undergraduate physics problem solving, scored against reference answers | [paper](https://openreview.net/forum?id=EmLiyZGvrR) |
-| PhyX | Physics problem solving with images, scored against reference answers | [paper](https://arxiv.org/abs/2505.15929) |
-| VSI-Bench | Spatial question answering over videos | [paper](https://doi.org/10.1109/cvpr52734.2025.00994) |
-| 3DSRBench | 3D spatial question answering over images | [paper](https://doi.org/10.1109/iccv51701.2025.00651) |
-| SAT | Spatial question answering on simulated scenes | [paper](https://openreview.net/forum?id=DW8U8ZWa1U) |
-| STI-Bench | Spatiotemporal question answering over videos | [paper](https://doi.org/10.1109/iccv51701.2025.00533) |
-| Physics-IQ | Video continuations from generative models, compared with real recordings | [paper](https://doi.org/10.1109/wacv61042.2026.00099) |
-| Cosmos-Reason1 | Yes-or-no and multiple-choice questions about videos of robots and driving | [paper](https://arxiv.org/abs/2503.15558) |
-| EngDesign | Engineering design answers, scored by task scripts that sometimes run domain simulators | [paper](https://openreview.net/forum?id=Wmsnx7EPel) |
-| SciLaws-Bench | Scientific law discovery from fixed data or from queries to a simulator that returns a hidden formula plus noise | [paper](https://arxiv.org/abs/2609.01552) |
-| MaD Physics | Choosing measurements of simulated physical systems that the agent cannot act on, scored by predictions of later states | [paper](https://arxiv.org/abs/2605.10820) |
-| **No text-based interaction interface** · criterion 3 | | |
-| FurnitureBench | Long-horizon furniture assembly by a robot arm | [paper](https://doi.org/10.1177/02783649241304789) |
-| IKEA Furniture Assembly | Long-horizon furniture assembly in simulation | [paper](https://doi.org/10.1109/icra48506.2021.9560986) |
-| RAMP | Robotic assembly manipulation and planning | [paper](https://doi.org/10.1109/lra.2023.3330611) |
-| Break and Make | Interactive structural understanding with LEGO bricks | [paper](https://doi.org/10.1007/978-3-031-19815-1_6) |
-| DeepMind Control Suite | Continuous control tasks | [paper](https://arxiv.org/abs/1801.00690) |
-| HumanoidBench | Whole-body humanoid locomotion and manipulation | [paper](https://doi.org/10.15607/rss.2024.xx.061) |
-| Meta-World | Multi-task and meta reinforcement learning on tabletop manipulation | [paper](https://proceedings.mlr.press/v100/yu20a.html) |
-| SoftGym | Deformable object manipulation | [paper](https://proceedings.mlr.press/v155/lin21a.html) |
-| CARLA | Urban driving | [paper](https://proceedings.mlr.press/v78/dosovitskiy17a.html) |
-| PHYRE | 2D physics puzzles solved by placing balls, one continuous action vector per attempt for learning agents | [paper](https://proceedings.neurips.cc/paper_files/paper/2019/file/4191ef5f6c1576762869ac49281130c9-Paper.pdf) |
-| **Not evaluation suites** · methods and generators | | |
-| BrickGPT | Generating physically stable and buildable brick structures from text | [paper](https://doi.org/10.1109/iccv51701.2025.01373) |
-| Assemble Them All | Physics-based assembly planning by disassembly | [paper](https://doi.org/10.1145/3550454.3555525) |
-| MatchMaker | Automated asset generation for robotic assembly | [paper](https://doi.org/10.1109/icra55743.2025.11128440) |
-| RoboGen | Generative simulation of tasks and data for robot learning | [paper](https://openreview.net/forum?id=SQIDlJd3hN) |
+<table>
+<thead><tr><th align="left">Example</th><th align="left">What it evaluates</th></tr></thead>
+<tbody>
+<tr><td colspan="2"><b>No interactive physics environment</b> · <sub>criterion 1 or 2</sub></td></tr>
+<tr><td><a href="https://openreview.net/forum?id=CXyZrKPz4CU">Physion</a></td><td>Predicting physical outcomes from videos</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=5Exz7eaBXH">Physion++</a></td><td>Inferring physical properties from videos</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=PgNEYaIc81Q">ComPhy</a></td><td>Compositional physical reasoning about objects and events in videos</td></tr>
+<tr><td><a href="https://doi.org/10.1109/cvpr.2017.215">CLEVR</a></td><td>Visual question answering on rendered scenes</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2506.09849">IntPhys 2</a></td><td>Judging whether videos are physically possible</td></tr>
+<tr><td><a href="https://doi.org/10.24963/ijcai.2024/696">GRASP</a></td><td>Language grounding and situated physics understanding in videos</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=z6WfQ43sHr">PhyBlock</a></td><td>Block assembly plans, scored against annotations and never executed in a simulator</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=VTF8yNQM66">SWE-bench</a></td><td>Resolving GitHub issues</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=oKn9c6ytLx">WebArena</a></td><td>Tasks on websites</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=tN61DTr4Ed">OSWorld</a></td><td>Tasks in real computer environments</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=zAdUB0aCTQ">AgentBench</a></td><td>LLM agents across software, game, and web environments</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=fibxvahvs3">GAIA</a></td><td>Questions for general AI assistants</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=dHng2O0Jjr">ToolBench</a></td><td>Using real-world APIs</td></tr>
+<tr><td><a href="https://doi.org/10.18653/v1/2025.acl-long.811">PhysReason</a></td><td>Physics problem solving, scored against reference answers and solution steps</td></tr>
+<tr><td><a href="https://doi.org/10.52202/085713-0044">PHYBench</a></td><td>Physics problem solving, scored against reference answers</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=EmLiyZGvrR">UGPhysics</a></td><td>Undergraduate physics problem solving, scored against reference answers</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2505.15929">PhyX</a></td><td>Physics problem solving with images, scored against reference answers</td></tr>
+<tr><td><a href="https://doi.org/10.1109/cvpr52734.2025.00994">VSI-Bench</a></td><td>Spatial question answering over videos</td></tr>
+<tr><td><a href="https://doi.org/10.1109/iccv51701.2025.00651">3DSRBench</a></td><td>3D spatial question answering over images</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=DW8U8ZWa1U">SAT</a></td><td>Spatial question answering on simulated scenes</td></tr>
+<tr><td><a href="https://doi.org/10.1109/iccv51701.2025.00533">STI-Bench</a></td><td>Spatiotemporal question answering over videos</td></tr>
+<tr><td><a href="https://doi.org/10.1109/wacv61042.2026.00099">Physics-IQ</a></td><td>Video continuations from generative models, compared with real recordings</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2503.15558">Cosmos-Reason1</a></td><td>Yes-or-no and multiple-choice questions about videos of robots and driving</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=Wmsnx7EPel">EngDesign</a></td><td>Engineering design answers, scored by task scripts that sometimes run domain simulators</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2609.01552">SciLaws-Bench</a></td><td>Scientific law discovery from fixed data or from queries to a simulator that returns a hidden formula plus noise</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2605.10820">MaD Physics</a></td><td>Choosing measurements of simulated physical systems that the agent cannot act on, scored by predictions of later states</td></tr>
+<tr><td colspan="2"><b>No text-based interaction interface</b> · <sub>criterion 3</sub></td></tr>
+<tr><td><a href="https://doi.org/10.1177/02783649241304789">FurnitureBench</a></td><td>Long-horizon furniture assembly by a robot arm</td></tr>
+<tr><td><a href="https://doi.org/10.1109/icra48506.2021.9560986">IKEA Furniture Assembly</a></td><td>Long-horizon furniture assembly in simulation</td></tr>
+<tr><td><a href="https://doi.org/10.1109/lra.2023.3330611">RAMP</a></td><td>Robotic assembly manipulation and planning</td></tr>
+<tr><td><a href="https://doi.org/10.1007/978-3-031-19815-1_6">Break and Make</a></td><td>Interactive structural understanding with LEGO bricks</td></tr>
+<tr><td><a href="https://arxiv.org/abs/1801.00690">DeepMind Control Suite</a></td><td>Continuous control tasks</td></tr>
+<tr><td><a href="https://doi.org/10.15607/rss.2024.xx.061">HumanoidBench</a></td><td>Whole-body humanoid locomotion and manipulation</td></tr>
+<tr><td><a href="https://proceedings.mlr.press/v100/yu20a.html">Meta-World</a></td><td>Multi-task and meta reinforcement learning on tabletop manipulation</td></tr>
+<tr><td><a href="https://proceedings.mlr.press/v155/lin21a.html">SoftGym</a></td><td>Deformable object manipulation</td></tr>
+<tr><td><a href="https://proceedings.mlr.press/v78/dosovitskiy17a.html">CARLA</a></td><td>Urban driving</td></tr>
+<tr><td><a href="https://proceedings.neurips.cc/paper_files/paper/2019/file/4191ef5f6c1576762869ac49281130c9-Paper.pdf">PHYRE</a></td><td>2D physics puzzles solved by placing balls, one continuous action vector per attempt for learning agents</td></tr>
+<tr><td colspan="2"><b>Not evaluation suites</b> · <sub>methods and generators</sub></td></tr>
+<tr><td><a href="https://doi.org/10.1109/iccv51701.2025.01373">BrickGPT</a></td><td>Generating physically stable and buildable brick structures from text</td></tr>
+<tr><td><a href="https://doi.org/10.1145/3550454.3555525">Assemble Them All</a></td><td>Physics-based assembly planning by disassembly</td></tr>
+<tr><td><a href="https://doi.org/10.1109/icra55743.2025.11128440">MatchMaker</a></td><td>Automated asset generation for robotic assembly</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=SQIDlJd3hN">RoboGen</a></td><td>Generative simulation of tasks and data for robot learning</td></tr>
+</tbody>
+</table>
 
 </details>
 <!-- OUT_OF_SCOPE:END -->
@@ -102,67 +105,73 @@ How to read the tables:
 - **Physics**: `symbolic` rule-based state · `simplified` gravity, friction, or collision left out · `realistic` a rigid-body or richer engine, 2D included · `partial` physics in only some tasks or some checks.
 - **Evaluation**: `functional` physics tests the function · `goal-state` final state against goal conditions · `answer` against reference answers · `judge` a model or a human scores · `mixed` more than one.
 - **Both**: the two minimum requirements together; ◐ when physics checks only part of the result. The class does not decide it, so a construction benchmark can still miss it.
-- **Year**: first release. A dash in Code means no public code was found.
+- **Names** link to the papers. The small text gives the year of first release and a code link where public code exists.
 
 <!-- AUDIT:START -->
 **In the paper** (Table 2, 11 benchmarks, 2 meet both requirements). Assessed in January 2026; BuildArena re-assessed in October 2026.
 
-| Benchmark | Year | GDD | PAP | EE | FE | CLR | Physics | Evaluation | Both | Paper | Code |
-|---|---|:-:|:-:|:-:|:-:|:-:|---|---|:-:|---|---|
-| **Construction** · realistic physics, building artifacts | | | | | | | | | | | |
-| BesiegeField | 2025 | ✓ | ✓ | ✗ | ✓ | ✓ | realistic | functional | ✓ | [paper](https://arxiv.org/abs/2510.14980) | [code](https://github.com/Godheritage/BesiegeField) |
-| BuildArena | 2025 | ✓ | ✓ | ✗ | ✓ | ✓ | realistic | functional | ✓ | [paper](https://arxiv.org/abs/2510.16559) | [code](https://github.com/AI4Science-WestlakeU/BuildArena) |
-| **Embodied** · realistic physics, acting toward goals | | | | | | | | | | | |
-| EmbodiedBench | 2025 | ✗ | ✗ | ✓ | ✗ | ✗ | realistic | goal-state | ✗ | [paper](https://arxiv.org/abs/2502.09560) | [code](https://github.com/EmbodiedBench/EmbodiedBench) |
-| PARTNR | 2024 | ✗ | ✗ | ✓ | ✗ | ✗ | realistic | goal-state | ✗ | [paper](https://arxiv.org/abs/2411.00081) | [code](https://github.com/facebookresearch/partnr-planner) |
-| **Simplified Sandbox** · simplified physics | | | | | | | | | | | |
-| MineAnyBuild | 2025 | ✓ | ✗ | ✗ | ✗ | ✗ | simplified | goal-state | ✗ | [paper](https://arxiv.org/abs/2505.20148) | [code](https://github.com/MineAnyBuild/MineAnyBuild) |
-| Minecraft Builder Dialog | 2024 | ✓ | ✗ | ✗ | ✗ | ✗ | simplified | goal-state | ✗ | [paper](https://arxiv.org/abs/2407.12734) | — |
-| Plancraft | 2024 | ✗ | ✗ | ✗ | ✗ | ✓ | simplified | goal-state | ✗ | [paper](https://arxiv.org/abs/2412.21033) | [code](https://github.com/gautierdag/plancraft) |
-| TeamCraft | 2024 | ✓ | ✗ | ✗ | ✗ | ✗ | simplified | goal-state | ✗ | [paper](https://arxiv.org/abs/2412.05255) | [code](https://github.com/teamcraft-bench/teamcraft) |
-| MineDojo | 2022 | ✗ | ✗ | ✗ | ✗ | ✓ | simplified | goal-state | ✗ | [paper](https://arxiv.org/abs/2206.08853) | [code](https://github.com/MineDojo/MineDojo) |
-| **Symbolic-Physical** · symbolic state | | | | | | | | | | | |
-| ScienceWorld | 2022 | ✗ | ✓ | ✗ | ✗ | ✗ | symbolic | goal-state | ✗ | [paper](https://arxiv.org/abs/2203.07540) | [code](https://github.com/allenai/ScienceWorld) |
-| ALFWorld | 2020 | ✗ | ✗ | ✗ | ✗ | ✗ | symbolic | goal-state | ✗ | [paper](https://arxiv.org/abs/2010.03768) | [code](https://github.com/alfworld/alfworld) |
+<table>
+<thead><tr><th align="left">Benchmark</th><th align="center">GDD</th><th align="center">PAP</th><th align="center">EE</th><th align="center">FE</th><th align="center">CLR</th><th align="left">Physics</th><th align="left">Evaluation</th><th align="center">Both</th></tr></thead>
+<tbody>
+<tr><td colspan="9"><b>Construction</b> · <sub>realistic physics, building artifacts</sub></td></tr>
+<tr><td><a href="https://arxiv.org/abs/2510.14980">BesiegeField</a> <sub>2025 · <a href="https://github.com/Godheritage/BesiegeField">code</a></sub></td><td align="center">✓</td><td align="center">✓</td><td align="center">✗</td><td align="center">✓</td><td align="center">✓</td><td>realistic</td><td>functional</td><td align="center">✓</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2510.16559">BuildArena</a> <sub>2025 · <a href="https://github.com/AI4Science-WestlakeU/BuildArena">code</a></sub></td><td align="center">✓</td><td align="center">✓</td><td align="center">✗</td><td align="center">✓</td><td align="center">✓</td><td>realistic</td><td>functional</td><td align="center">✓</td></tr>
+<tr><td colspan="9"><b>Embodied</b> · <sub>realistic physics, acting toward goals</sub></td></tr>
+<tr><td><a href="https://arxiv.org/abs/2502.09560">EmbodiedBench</a> <sub>2025 · <a href="https://github.com/EmbodiedBench/EmbodiedBench">code</a></sub></td><td align="center">✗</td><td align="center">✗</td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2411.00081">PARTNR</a> <sub>2024 · <a href="https://github.com/facebookresearch/partnr-planner">code</a></sub></td><td align="center">✗</td><td align="center">✗</td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td colspan="9"><b>Simplified Sandbox</b> · <sub>simplified physics</sub></td></tr>
+<tr><td><a href="https://arxiv.org/abs/2505.20148">MineAnyBuild</a> <sub>2025 · <a href="https://github.com/MineAnyBuild/MineAnyBuild">code</a></sub></td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td>simplified</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2407.12734">Minecraft Builder Dialog</a> <sub>2024</sub></td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td>simplified</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2412.21033">Plancraft</a> <sub>2024 · <a href="https://github.com/gautierdag/plancraft">code</a></sub></td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✓</td><td>simplified</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2412.05255">TeamCraft</a> <sub>2024 · <a href="https://github.com/teamcraft-bench/teamcraft">code</a></sub></td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td>simplified</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2206.08853">MineDojo</a> <sub>2022 · <a href="https://github.com/MineDojo/MineDojo">code</a></sub></td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✓</td><td>simplified</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td colspan="9"><b>Symbolic-Physical</b> · <sub>symbolic state</sub></td></tr>
+<tr><td><a href="https://arxiv.org/abs/2203.07540">ScienceWorld</a> <sub>2022 · <a href="https://github.com/allenai/ScienceWorld">code</a></sub></td><td align="center">✗</td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td>symbolic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2010.03768">ALFWorld</a> <sub>2020 · <a href="https://github.com/alfworld/alfworld">code</a></sub></td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td>symbolic</td><td>goal-state</td><td align="center">✗</td></tr>
+</tbody>
+</table>
 
 **Candidates** (30). Assessed from the published texts, pending review by the paper's authors. The evidence for each judgment is in `data/benchmarks.yaml`.
 
-| Benchmark | Year | GDD | PAP | EE | FE | CLR | Physics | Evaluation | Both | Paper | Code |
-|---|---|:-:|:-:|:-:|:-:|:-:|---|---|:-:|---|---|
-| **Construction** · realistic physics, building artifacts | | | | | | | | | | | |
-| ArtifactArena | 2026 | ✓ | ✓ | ✗ | ✓ | ✓ | realistic | functional | ✓ | [paper](https://arxiv.org/abs/2610.06511) | [code](https://github.com/ArtifactArena/harness-public) |
-| BrickBench | 2026 | ✓ | ✗ | ✗ | ◐ | ✓ | partial | mixed | ◐ | [paper](https://arxiv.org/abs/2610.12452) | [code](https://github.com/kulits/BrickAgent) |
-| FunCADBench | 2026 | ✓ | ◐ | ✗ | ✓ | ✓ | realistic | functional | ✓ | [paper](https://arxiv.org/abs/2610.26861) | [code](https://github.com/thegenlab/fun-CAD-harness) |
-| LMBuild | 2026 | ✓ | ◐ | ✗ | ◐ | ✓ | partial | mixed | ◐ | [paper](https://arxiv.org/abs/2610.04292) | [code](https://github.com/Lumos-Jiateng/LMBuild) |
-| PACE-Bench | 2026 | ✓ | ✓ | ✗ | ✓ | ✓ | realistic | functional | ✓ | [paper](https://arxiv.org/abs/2608.14441) | [code](https://github.com/thunlp/PACE-Bench) |
-| PolyBridgeBench | 2026 | ✓ | ✗ | ✗ | ✓ | ✓ | realistic | functional | ✓ | [paper](https://arxiv.org/abs/2609.21493) | — |
-| **Embodied** · realistic physics, acting toward goals | | | | | | | | | | | |
-| CaP-X | 2026 | ✗ | ◐ | ◐ | ✗ | ✓ | realistic | goal-state | ✗ | [paper](https://arxiv.org/abs/2603.22435) | [code](https://github.com/capgym/cap-x) |
-| CodeActionBench | 2026 | ✗ | ◐ | ✓ | ✗ | ✓ | realistic | goal-state | ✗ | [paper](https://arxiv.org/abs/2609.33807) | [code](https://github.com/lyhkk/CodeActionBench) |
-| ESI-Bench | 2026 | ✗ | ◐ | ✓ | ✗ | ✗ | realistic | answer | ✗ | [paper](https://arxiv.org/abs/2605.18746) | [code](https://github.com/ESI-Bench/ESI-Bench) |
-| ESPIRE | 2026 | ✗ | ✗ | ✓ | ✗ | ◐ | realistic | goal-state | ✗ | [paper](https://arxiv.org/abs/2603.13033) | [code](https://github.com/spatigen/espire) |
-| Embodied Agent Arena | 2026 | ✗ | ◐ | ✓ | ✗ | ✗ | realistic | goal-state | ✗ | [paper](https://arxiv.org/abs/2610.00854) | [code](https://github.com/embodied-agent-arena/embodied-agent-arena) |
-| Embodied Playground | 2026 | ◐ | ✓ | ✓ | ◐ | ◐ | realistic | mixed | ◐ | [paper](https://arxiv.org/abs/2610.27039) | [code](https://github.com/Winniechen2002/Embodied-Playground) |
-| EmbodiedMemory-Bench | 2026 | ✗ | ✗ | ✓ | ✗ | ✗ | realistic | goal-state | ✗ | [paper](https://arxiv.org/abs/2609.28236) | [code](https://github.com/ZJU-OmniAI/Embodied-Omni/tree/main/embodied_memory) |
-| EvoPolicyGym | 2026 | ✗ | ◐ | ✗ | ✗ | ✓ | partial | mixed | ✗ | [paper](https://arxiv.org/abs/2607.02440) | [code](https://github.com/Linzwcs/EvoPolicyGym) |
-| HumanCLAW-Bench | 2026 | ✗ | ✗ | ✓ | ✗ | ✗ | realistic | goal-state | ✗ | [paper](https://arxiv.org/abs/2607.27180) | [code](https://github.com/Human-CLAW/HumanCLAW) |
-| LIBERO-Agent | 2026 | ✗ | ◐ | ✓ | ✗ | ◐ | realistic | goal-state | ✗ | [paper](https://arxiv.org/abs/2609.39507) | [code](https://github.com/dzj441/Libero-Agent) |
-| PhysMent | 2026 | ✗ | ◐ | ✓ | ✗ | ✗ | realistic | answer | ✗ | [paper](https://arxiv.org/abs/2609.13152) | [code](https://github.com/DRJCompSciWiz/PhysMent---An-Interactive-Approach-For-LLM-Reasoning-In-Physics-Problems) |
-| RLE-Bench<sup>[1]</sup> | 2026 | ◐ | ◐ | ◐ | ◐ | ✓ | realistic | mixed | ◐ | [paper](https://arxiv.org/abs/2609.34210) | [code](https://github.com/RLE-Bench/RLE-Bench) |
-| ReactHuman | 2026 | ✗ | ◐ | ✗ | ✗ | ✗ | realistic | answer | ✗ | [paper](https://arxiv.org/abs/2609.10895) | — |
-| RoboDojo + RoboProbe | 2026 | ✗ | ◐ | ✓ | ✗ | ✗ | realistic | goal-state | ✗ | [paper](https://arxiv.org/abs/2609.24170) | [code](https://github.com/RoboProbe/RoboProbe) |
-| RoboQuest | 2026 | ✗ | ◐ | ✓ | ✗ | ◐ | realistic | goal-state | ✗ | [paper](https://arxiv.org/abs/2610.10388) | [code](https://github.com/declare-lab/RoboQuest) |
-| SpatialWorld | 2026 | ✗ | ✗ | ✓ | ✗ | ✗ | realistic | goal-state | ✗ | [paper](https://arxiv.org/abs/2606.09669) | [code](https://github.com/Hongcheng-Gao/SpatialWorld) |
-| VABench | 2026 | ✗ | ◐ | ✓ | ✗ | ◐ | realistic | goal-state | ✗ | [paper](https://arxiv.org/abs/2609.19554) | [code](https://github.com/zhangzhongbo2213/VABench) |
-| DeepPHY | 2025 | ✗ | ✓ | ✓ | ✗ | ✓ | realistic | goal-state | ✗ | [paper](https://arxiv.org/abs/2508.05405) | [code](https://github.com/XinrunXu/DeepPHY) |
-| **Simplified Sandbox** · simplified physics | | | | | | | | | | | |
-| DiscoverPhysics | 2026 | ✗ | ✗ | ✗ | ✗ | ✓ | simplified | mixed | ✗ | [paper](https://arxiv.org/abs/2605.26087) | [code](https://github.com/SampsonML/DiscoverPhysics) |
-| Mine Odyssey | 2026 | ✗ | ✗ | ✗ | ✗ | ✓ | simplified | goal-state | ✗ | [paper](https://arxiv.org/abs/2610.11328) | [code](https://github.com/hkust-nlp/MineOdyssey) |
-| MineCEraft | 2026 | ✓ | ◐ | ✗ | ◐ | ✗ | simplified | mixed | ✗ | [paper](https://arxiv.org/abs/2608.28884) | [code](https://github.com/SewoongLee/mineCEraft) |
-| MineExplorer | 2026 | ✗ | ✗ | ✗ | ✗ | ✗ | simplified | goal-state | ✗ | [paper](https://arxiv.org/abs/2605.30931) | [code](https://github.com/meituan-longcat/MineExplorer) |
-| VLATIM | 2026 | ◐ | ✗ | ✗ | ✗ | ✗ | simplified | mixed | ✗ | [paper](https://arxiv.org/abs/2605.11223) | [code](https://github.com/Marco2929/FMVLATIMBench) |
-| **Symbolic-Physical** · symbolic state | | | | | | | | | | | |
-| MECoBench | 2026 | ✗ | ✗ | ✗ | ✗ | ◐ | symbolic | goal-state | ✗ | [paper](https://arxiv.org/abs/2606.31966) | [code](https://github.com/q-i-n-g/MECoBench) |
+<table>
+<thead><tr><th align="left">Benchmark</th><th align="center">GDD</th><th align="center">PAP</th><th align="center">EE</th><th align="center">FE</th><th align="center">CLR</th><th align="left">Physics</th><th align="left">Evaluation</th><th align="center">Both</th></tr></thead>
+<tbody>
+<tr><td colspan="9"><b>Construction</b> · <sub>realistic physics, building artifacts</sub></td></tr>
+<tr><td><a href="https://arxiv.org/abs/2610.06511">ArtifactArena</a> <sub>2026 · <a href="https://github.com/ArtifactArena/harness-public">code</a></sub></td><td align="center">✓</td><td align="center">✓</td><td align="center">✗</td><td align="center">✓</td><td align="center">✓</td><td>realistic</td><td>functional</td><td align="center">✓</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2610.12452">BrickBench</a> <sub>2026 · <a href="https://github.com/kulits/BrickAgent">code</a></sub></td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td align="center">◐</td><td align="center">✓</td><td>partial</td><td>mixed</td><td align="center">◐</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2610.26861">FunCADBench</a> <sub>2026 · <a href="https://github.com/thegenlab/fun-CAD-harness">code</a></sub></td><td align="center">✓</td><td align="center">◐</td><td align="center">✗</td><td align="center">✓</td><td align="center">✓</td><td>realistic</td><td>functional</td><td align="center">✓</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2610.04292">LMBuild</a> <sub>2026 · <a href="https://github.com/Lumos-Jiateng/LMBuild">code</a></sub></td><td align="center">✓</td><td align="center">◐</td><td align="center">✗</td><td align="center">◐</td><td align="center">✓</td><td>partial</td><td>mixed</td><td align="center">◐</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2608.14441">PACE-Bench</a> <sub>2026 · <a href="https://github.com/thunlp/PACE-Bench">code</a></sub></td><td align="center">✓</td><td align="center">✓</td><td align="center">✗</td><td align="center">✓</td><td align="center">✓</td><td>realistic</td><td>functional</td><td align="center">✓</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2609.21493">PolyBridgeBench</a> <sub>2026</sub></td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td align="center">✓</td><td align="center">✓</td><td>realistic</td><td>functional</td><td align="center">✓</td></tr>
+<tr><td colspan="9"><b>Embodied</b> · <sub>realistic physics, acting toward goals</sub></td></tr>
+<tr><td><a href="https://arxiv.org/abs/2603.22435">CaP-X</a> <sub>2026 · <a href="https://github.com/capgym/cap-x">code</a></sub></td><td align="center">✗</td><td align="center">◐</td><td align="center">◐</td><td align="center">✗</td><td align="center">✓</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2609.33807">CodeActionBench</a> <sub>2026 · <a href="https://github.com/lyhkk/CodeActionBench">code</a></sub></td><td align="center">✗</td><td align="center">◐</td><td align="center">✓</td><td align="center">✗</td><td align="center">✓</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2605.18746">ESI-Bench</a> <sub>2026 · <a href="https://github.com/ESI-Bench/ESI-Bench">code</a></sub></td><td align="center">✗</td><td align="center">◐</td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td>realistic</td><td>answer</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2603.13033">ESPIRE</a> <sub>2026 · <a href="https://github.com/spatigen/espire">code</a></sub></td><td align="center">✗</td><td align="center">✗</td><td align="center">✓</td><td align="center">✗</td><td align="center">◐</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2610.00854">Embodied Agent Arena</a> <sub>2026 · <a href="https://github.com/embodied-agent-arena/embodied-agent-arena">code</a></sub></td><td align="center">✗</td><td align="center">◐</td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2610.27039">Embodied Playground</a> <sub>2026 · <a href="https://github.com/Winniechen2002/Embodied-Playground">code</a></sub></td><td align="center">◐</td><td align="center">✓</td><td align="center">✓</td><td align="center">◐</td><td align="center">◐</td><td>realistic</td><td>mixed</td><td align="center">◐</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2609.28236">EmbodiedMemory-Bench</a> <sub>2026 · <a href="https://github.com/ZJU-OmniAI/Embodied-Omni/tree/main/embodied_memory">code</a></sub></td><td align="center">✗</td><td align="center">✗</td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2607.02440">EvoPolicyGym</a> <sub>2026 · <a href="https://github.com/Linzwcs/EvoPolicyGym">code</a></sub></td><td align="center">✗</td><td align="center">◐</td><td align="center">✗</td><td align="center">✗</td><td align="center">✓</td><td>partial</td><td>mixed</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2607.27180">HumanCLAW-Bench</a> <sub>2026 · <a href="https://github.com/Human-CLAW/HumanCLAW">code</a></sub></td><td align="center">✗</td><td align="center">✗</td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2609.39507">LIBERO-Agent</a> <sub>2026 · <a href="https://github.com/dzj441/Libero-Agent">code</a></sub></td><td align="center">✗</td><td align="center">◐</td><td align="center">✓</td><td align="center">✗</td><td align="center">◐</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2609.13152">PhysMent</a> <sub>2026 · <a href="https://github.com/DRJCompSciWiz/PhysMent---An-Interactive-Approach-For-LLM-Reasoning-In-Physics-Problems">code</a></sub></td><td align="center">✗</td><td align="center">◐</td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td>realistic</td><td>answer</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2609.34210">RLE-Bench</a><sup>[1]</sup> <sub>2026 · <a href="https://github.com/RLE-Bench/RLE-Bench">code</a></sub></td><td align="center">◐</td><td align="center">◐</td><td align="center">◐</td><td align="center">◐</td><td align="center">✓</td><td>realistic</td><td>mixed</td><td align="center">◐</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2609.10895">ReactHuman</a> <sub>2026</sub></td><td align="center">✗</td><td align="center">◐</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td>realistic</td><td>answer</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2609.24170">RoboDojo + RoboProbe</a> <sub>2026 · <a href="https://github.com/RoboProbe/RoboProbe">code</a></sub></td><td align="center">✗</td><td align="center">◐</td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2610.10388">RoboQuest</a> <sub>2026 · <a href="https://github.com/declare-lab/RoboQuest">code</a></sub></td><td align="center">✗</td><td align="center">◐</td><td align="center">✓</td><td align="center">✗</td><td align="center">◐</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2606.09669">SpatialWorld</a> <sub>2026 · <a href="https://github.com/Hongcheng-Gao/SpatialWorld">code</a></sub></td><td align="center">✗</td><td align="center">✗</td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2609.19554">VABench</a> <sub>2026 · <a href="https://github.com/zhangzhongbo2213/VABench">code</a></sub></td><td align="center">✗</td><td align="center">◐</td><td align="center">✓</td><td align="center">✗</td><td align="center">◐</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2508.05405">DeepPHY</a> <sub>2025 · <a href="https://github.com/XinrunXu/DeepPHY">code</a></sub></td><td align="center">✗</td><td align="center">✓</td><td align="center">✓</td><td align="center">✗</td><td align="center">✓</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td colspan="9"><b>Simplified Sandbox</b> · <sub>simplified physics</sub></td></tr>
+<tr><td><a href="https://arxiv.org/abs/2605.26087">DiscoverPhysics</a> <sub>2026 · <a href="https://github.com/SampsonML/DiscoverPhysics">code</a></sub></td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✓</td><td>simplified</td><td>mixed</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2610.11328">Mine Odyssey</a> <sub>2026 · <a href="https://github.com/hkust-nlp/MineOdyssey">code</a></sub></td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✓</td><td>simplified</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2608.28884">MineCEraft</a> <sub>2026 · <a href="https://github.com/SewoongLee/mineCEraft">code</a></sub></td><td align="center">✓</td><td align="center">◐</td><td align="center">✗</td><td align="center">◐</td><td align="center">✗</td><td>simplified</td><td>mixed</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2605.30931">MineExplorer</a> <sub>2026 · <a href="https://github.com/meituan-longcat/MineExplorer">code</a></sub></td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td>simplified</td><td>goal-state</td><td align="center">✗</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2605.11223">VLATIM</a> <sub>2026 · <a href="https://github.com/Marco2929/FMVLATIMBench">code</a></sub></td><td align="center">◐</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td>simplified</td><td>mixed</td><td align="center">✗</td></tr>
+<tr><td colspan="9"><b>Symbolic-Physical</b> · <sub>symbolic state</sub></td></tr>
+<tr><td><a href="https://arxiv.org/abs/2606.31966">MECoBench</a> <sub>2026 · <a href="https://github.com/q-i-n-g/MECoBench">code</a></sub></td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">✗</td><td align="center">◐</td><td>symbolic</td><td>goal-state</td><td align="center">✗</td></tr>
+</tbody>
+</table>
 
 <details>
 <summary><sub>Notes (1)</sub></summary>

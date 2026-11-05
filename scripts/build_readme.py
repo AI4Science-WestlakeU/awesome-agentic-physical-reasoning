@@ -5,6 +5,7 @@ Usage: python3 scripts/build_readme.py   (run from the repository root)
 data/benchmarks.yaml  -> the audit tables between <!-- AUDIT:START --> and <!-- AUDIT:END -->, and data/benchmarks.json
 data/out_of_scope.yaml -> the collapsed examples table between <!-- OUT_OF_SCOPE:START --> and <!-- OUT_OF_SCOPE:END -->
 """
+import html
 import json
 import pathlib
 import sys
@@ -34,28 +35,39 @@ KINDS = [
     ("no-text-interface", "No text-based interaction interface", "criterion 3"),
     ("not-a-benchmark", "Not evaluation suites", "methods and generators"),
 ]
-COLS = 12
+COLS = 9
 
 
-def link(label, url):
-    return f"[{label}]({url})" if url else "—"
+def esc(s):
+    return html.escape(str(s), quote=True)
+
+
+def name_cell(b, mark=""):
+    """The name links to the paper; small text gives the year of first release and a code link."""
+    name = f'<a href="{esc(b["paper"])}">{esc(b["name"])}</a>' if b.get("paper") else esc(b["name"])
+    extra = [str(b["year"])]
+    if b.get("code"):
+        extra.append(f'<a href="{esc(b["code"])}">code</a>')
+    return f'{name}{mark} <sub>{" · ".join(extra)}</sub>'
 
 
 def row(b, mark=""):
-    caps = " | ".join(MARK[b["capabilities"][c]] for c in CAPS)
-    both = MARK[b["meets_standard"]]
-    return (f"| {b['name']}{mark} | {b['year']} | {caps} | {b['physics']} | {b['evaluation']} | {both} | "
-            f"{link('paper', b.get('paper'))} | {link('code', b.get('code'))} |")
+    cells = [f"<td>{name_cell(b, mark)}</td>"]
+    cells += [f'<td align="center">{MARK[b["capabilities"][c]]}</td>' for c in CAPS]
+    cells += [f"<td>{esc(b['physics'])}</td>", f"<td>{esc(b['evaluation'])}</td>",
+              f'<td align="center">{MARK[b["meets_standard"]]}</td>']
+    return "<tr>" + "".join(cells) + "</tr>"
 
 
-def group_row(title, detail=""):
-    label = f"**{title}**" + (f" · {detail}" if detail else "")
-    return f"| {label} |" + " |" * (COLS - 1)
+def group_row(title, detail="", span=COLS):
+    label = f"<b>{esc(title)}</b>" + (f" · <sub>{esc(detail)}</sub>" if detail else "")
+    return f'<tr><td colspan="{span}">{label}</td></tr>'
 
 
 def table(items):
-    head = ("| Benchmark | Year | GDD | PAP | EE | FE | CLR | Physics | Evaluation | Both | Paper | Code |\n"
-            "|---|---|:-:|:-:|:-:|:-:|:-:|---|---|:-:|---|---|")
+    head = ('<table>\n<thead><tr><th align="left">Benchmark</th>'
+            + "".join(f'<th align="center">{c}</th>' for c in CAPS)
+            + '<th align="left">Physics</th><th align="left">Evaluation</th><th align="center">Both</th></tr></thead>\n<tbody>')
     lines, notes = [head], []
     for cls, detail in CLASSES:
         group = [b for b in items if b["class"] == cls]
@@ -68,6 +80,7 @@ def table(items):
                 notes.append(b["footnote"])
                 mark = f"<sup>[{len(notes)}]</sup>"
             lines.append(row(b, mark))
+    lines.append("</tbody>\n</table>")
     if notes:
         lines += ["", "<details>", f"<summary><sub>Notes ({len(notes)})</sub></summary>", ""]
         lines += [f"<sub>[{i}] {n}</sub><br>" if i < len(notes) else f"<sub>[{i}] {n}</sub>" for i, n in enumerate(notes, 1)]
@@ -164,15 +177,17 @@ def oos_block():
         "",
         "Related work outside the scope, grouped by the criterion it misses. Most examples come from Section 3.2 and Appendix B of the paper.",
         "",
-        "| Example | What it evaluates | Paper |",
-        "|---|---|---|",
+        "<table>",
+        '<thead><tr><th align="left">Example</th><th align="left">What it evaluates</th></tr></thead>',
+        "<tbody>",
     ]
     for kind, title, detail in KINDS:
         group = [o for o in items if o["kind"] == kind]
         if not group:
             continue
-        lines.append(f"| **{title}** · {detail} | | |")
-        lines += [f"| {o['name']} | {o['evaluates']} | {link('paper', o['paper'])} |" for o in group]
+        lines.append(group_row(title, detail, span=2))
+        lines += [f'<tr><td><a href="{esc(o["paper"])}">{esc(o["name"])}</a></td><td>{esc(o["evaluates"])}</td></tr>' for o in group]
+    lines += ["</tbody>", "</table>"]
     lines += ["", "</details>"]
     return lines, len(items)
 
