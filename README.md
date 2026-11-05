@@ -100,11 +100,29 @@ Related work outside the scope, grouped by the criterion it misses. Most example
 
 How to read the tables:
 
-- **Class** names the task: Symbolic-Physical, symbolic state · Simplified Sandbox, simplified physics · Construction, building artifacts · Embodied, acting toward goals or answers. Construction and Embodied need a realistic engine for at least part of the benchmark, and the Physics column says how much. A suite that mixes kinds of task takes the class of most of its tasks.
-- **Capabilities**: the five above. ✓ tested · ✗ not tested · ◐ tested in some tasks or in a weaker form · ? unclear from the published text.
-- **Physics**: `symbolic` rule-based state · `simplified` gravity, friction, or collision left out · `realistic` a rigid-body or richer engine, 2D included · `partial` physics in only some tasks or some checks.
-- **Evaluation**: `functional` physics tests the function · `goal-state` final state against goal conditions · `answer` against reference answers · `judge` a model or a human scores · `mixed` more than one.
-- **Both**: the two minimum requirements together; ◐ when physics checks only part of the result. The class does not decide it, so a construction benchmark can still miss it.
+- **Class** names the task. Construction and Embodied need a realistic engine for at least part of the benchmark, and the Physics column says how much. A suite that mixes kinds of task takes the class of most of its tasks.
+  - **Symbolic-Physical**: symbolic state
+  - **Simplified Sandbox**: simplified physics
+  - **Construction**: building artifacts
+  - **Embodied**: acting toward goals or answers
+- **Capabilities**: the five above.
+  - ✓ tested
+  - ✗ not tested
+  - ◐ tested in some tasks or in a weaker form
+  - ? unclear from the published text
+- **Physics**
+  - `symbolic`: rule-based state
+  - `simplified`: gravity, friction, or collision left out
+  - `realistic`: a rigid-body or richer engine, 2D included
+  - `partial`: physics in only some tasks or some checks
+- **Evaluation**
+  - `functional`: physics tests the function
+  - `goal-state`: final state against goal conditions
+  - `answer`: answers against reference answers
+  - `judge`: a model or a human scores the result
+  - `mixed`: more than one of these
+- **Both**: the two minimum requirements together. The class does not decide it, so a construction benchmark can still miss it.
+  - ◐ physics checks only part of the result
 - **Names** link to the papers. The small text gives the year of first release and a code link where public code exists.
 
 <!-- AUDIT:START -->
