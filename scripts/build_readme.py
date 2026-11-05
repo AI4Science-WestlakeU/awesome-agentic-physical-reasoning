@@ -166,7 +166,7 @@ def oos_block():
     items = yaml.safe_load(OOS.read_text(encoding="utf-8"))
     kinds = {k for k, _, _ in KINDS}
     for o in items:
-        missing = [k for k in ("name", "kind", "evaluates", "paper") if not o.get(k)]
+        missing = [k for k in ("name", "year", "kind", "evaluates", "paper") if not o.get(k)]
         if missing:
             sys.exit(f"out of scope {o.get('name', '?')}: missing {missing}")
         if o["kind"] not in kinds:
@@ -178,15 +178,15 @@ def oos_block():
         "Related work outside the scope, grouped by the criterion it misses. Most examples come from Section 3.2 and Appendix B of the paper.",
         "",
         "<table>",
-        '<thead><tr><th align="left">Example</th><th align="left">What it evaluates</th></tr></thead>',
+        '<thead><tr><th align="left">Example</th><th align="left">Year</th><th align="left">What it evaluates</th></tr></thead>',
         "<tbody>",
     ]
     for kind, title, detail in KINDS:
-        group = [o for o in items if o["kind"] == kind]
+        group = sorted((o for o in items if o["kind"] == kind), key=lambda o: (-o["year"], o["name"]))
         if not group:
             continue
-        lines.append(group_row(title, detail, span=2))
-        lines += [f'<tr><td><a href="{esc(o["paper"])}">{esc(o["name"])}</a></td><td>{esc(o["evaluates"])}</td></tr>' for o in group]
+        lines.append(group_row(title, detail, span=3))
+        lines += [f'<tr><td><a href="{esc(o["paper"])}">{esc(o["name"])}</a></td><td>{o["year"]}</td><td>{esc(o["evaluates"])}</td></tr>' for o in group]
     lines += ["</tbody>", "</table>"]
     lines += ["", "</details>"]
     return lines, len(items)

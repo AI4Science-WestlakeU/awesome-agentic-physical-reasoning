@@ -2,7 +2,7 @@
 
 ## Adding a benchmark
 
-1. Check the three scope criteria in the README. Work outside the scope can be added to `data/out_of_scope.yaml` as an example, with the criterion it misses.
+1. Check the three scope criteria in the README. Work outside the scope can be added to `data/out_of_scope.yaml` as an example, with its year of first release and the criterion it misses.
 2. Add one record to `data/benchmarks.yaml`, following the field comments at the top of the file. Set `status: candidate` and `assessed` to the date you read the paper.
 3. In `notes`, give the evidence: the physics engine or rule system, how success is decided, the action interface, the iteration budget, and the models evaluated. Quote the paper where a sentence settles a call.
 4. Run `python3 scripts/build_readme.py` (needs PyYAML) and commit `README.md` and `data/benchmarks.json` together with the YAML. The script rejects values outside the vocabulary in the file headers.

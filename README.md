@@ -45,51 +45,51 @@ The audit has a fixed scope, the same as the paper's (Section 3.2). A benchmark 
 Related work outside the scope, grouped by the criterion it misses. Most examples come from Section 3.2 and Appendix B of the paper.
 
 <table>
-<thead><tr><th align="left">Example</th><th align="left">What it evaluates</th></tr></thead>
+<thead><tr><th align="left">Example</th><th align="left">Year</th><th align="left">What it evaluates</th></tr></thead>
 <tbody>
-<tr><td colspan="2"><b>No interactive physics environment</b> · <sub>criterion 1 or 2</sub></td></tr>
-<tr><td><a href="https://openreview.net/forum?id=CXyZrKPz4CU">Physion</a></td><td>Predicting physical outcomes from videos</td></tr>
-<tr><td><a href="https://openreview.net/forum?id=5Exz7eaBXH">Physion++</a></td><td>Inferring physical properties from videos</td></tr>
-<tr><td><a href="https://openreview.net/forum?id=PgNEYaIc81Q">ComPhy</a></td><td>Compositional physical reasoning about objects and events in videos</td></tr>
-<tr><td><a href="https://doi.org/10.1109/cvpr.2017.215">CLEVR</a></td><td>Visual question answering on rendered scenes</td></tr>
-<tr><td><a href="https://arxiv.org/abs/2506.09849">IntPhys 2</a></td><td>Judging whether videos are physically possible</td></tr>
-<tr><td><a href="https://doi.org/10.24963/ijcai.2024/696">GRASP</a></td><td>Language grounding and situated physics understanding in videos</td></tr>
-<tr><td><a href="https://openreview.net/forum?id=z6WfQ43sHr">PhyBlock</a></td><td>Block assembly plans, scored against annotations and never executed in a simulator</td></tr>
-<tr><td><a href="https://openreview.net/forum?id=VTF8yNQM66">SWE-bench</a></td><td>Resolving GitHub issues</td></tr>
-<tr><td><a href="https://openreview.net/forum?id=oKn9c6ytLx">WebArena</a></td><td>Tasks on websites</td></tr>
-<tr><td><a href="https://openreview.net/forum?id=tN61DTr4Ed">OSWorld</a></td><td>Tasks in real computer environments</td></tr>
-<tr><td><a href="https://openreview.net/forum?id=zAdUB0aCTQ">AgentBench</a></td><td>LLM agents across software, game, and web environments</td></tr>
-<tr><td><a href="https://openreview.net/forum?id=fibxvahvs3">GAIA</a></td><td>Questions for general AI assistants</td></tr>
-<tr><td><a href="https://openreview.net/forum?id=dHng2O0Jjr">ToolBench</a></td><td>Using real-world APIs</td></tr>
-<tr><td><a href="https://doi.org/10.18653/v1/2025.acl-long.811">PhysReason</a></td><td>Physics problem solving, scored against reference answers and solution steps</td></tr>
-<tr><td><a href="https://doi.org/10.52202/085713-0044">PHYBench</a></td><td>Physics problem solving, scored against reference answers</td></tr>
-<tr><td><a href="https://openreview.net/forum?id=EmLiyZGvrR">UGPhysics</a></td><td>Undergraduate physics problem solving, scored against reference answers</td></tr>
-<tr><td><a href="https://arxiv.org/abs/2505.15929">PhyX</a></td><td>Physics problem solving with images, scored against reference answers</td></tr>
-<tr><td><a href="https://doi.org/10.1109/cvpr52734.2025.00994">VSI-Bench</a></td><td>Spatial question answering over videos</td></tr>
-<tr><td><a href="https://doi.org/10.1109/iccv51701.2025.00651">3DSRBench</a></td><td>3D spatial question answering over images</td></tr>
-<tr><td><a href="https://openreview.net/forum?id=DW8U8ZWa1U">SAT</a></td><td>Spatial question answering on simulated scenes</td></tr>
-<tr><td><a href="https://doi.org/10.1109/iccv51701.2025.00533">STI-Bench</a></td><td>Spatiotemporal question answering over videos</td></tr>
-<tr><td><a href="https://doi.org/10.1109/wacv61042.2026.00099">Physics-IQ</a></td><td>Video continuations from generative models, compared with real recordings</td></tr>
-<tr><td><a href="https://arxiv.org/abs/2503.15558">Cosmos-Reason1</a></td><td>Yes-or-no and multiple-choice questions about videos of robots and driving</td></tr>
-<tr><td><a href="https://openreview.net/forum?id=Wmsnx7EPel">EngDesign</a></td><td>Engineering design answers, scored by task scripts that sometimes run domain simulators</td></tr>
-<tr><td><a href="https://arxiv.org/abs/2609.01552">SciLaws-Bench</a></td><td>Scientific law discovery from fixed data or from queries to a simulator that returns a hidden formula plus noise</td></tr>
-<tr><td><a href="https://arxiv.org/abs/2605.10820">MaD Physics</a></td><td>Choosing measurements of simulated physical systems that the agent cannot act on, scored by predictions of later states</td></tr>
-<tr><td colspan="2"><b>No text-based interaction interface</b> · <sub>criterion 3</sub></td></tr>
-<tr><td><a href="https://doi.org/10.1177/02783649241304789">FurnitureBench</a></td><td>Long-horizon furniture assembly by a robot arm</td></tr>
-<tr><td><a href="https://doi.org/10.1109/icra48506.2021.9560986">IKEA Furniture Assembly</a></td><td>Long-horizon furniture assembly in simulation</td></tr>
-<tr><td><a href="https://doi.org/10.1109/lra.2023.3330611">RAMP</a></td><td>Robotic assembly manipulation and planning</td></tr>
-<tr><td><a href="https://doi.org/10.1007/978-3-031-19815-1_6">Break and Make</a></td><td>Interactive structural understanding with LEGO bricks</td></tr>
-<tr><td><a href="https://arxiv.org/abs/1801.00690">DeepMind Control Suite</a></td><td>Continuous control tasks</td></tr>
-<tr><td><a href="https://doi.org/10.15607/rss.2024.xx.061">HumanoidBench</a></td><td>Whole-body humanoid locomotion and manipulation</td></tr>
-<tr><td><a href="https://proceedings.mlr.press/v100/yu20a.html">Meta-World</a></td><td>Multi-task and meta reinforcement learning on tabletop manipulation</td></tr>
-<tr><td><a href="https://proceedings.mlr.press/v155/lin21a.html">SoftGym</a></td><td>Deformable object manipulation</td></tr>
-<tr><td><a href="https://proceedings.mlr.press/v78/dosovitskiy17a.html">CARLA</a></td><td>Urban driving</td></tr>
-<tr><td><a href="https://proceedings.neurips.cc/paper_files/paper/2019/file/4191ef5f6c1576762869ac49281130c9-Paper.pdf">PHYRE</a></td><td>2D physics puzzles solved by placing balls, one continuous action vector per attempt for learning agents</td></tr>
-<tr><td colspan="2"><b>Not evaluation suites</b> · <sub>methods and generators</sub></td></tr>
-<tr><td><a href="https://doi.org/10.1109/iccv51701.2025.01373">BrickGPT</a></td><td>Generating physically stable and buildable brick structures from text</td></tr>
-<tr><td><a href="https://doi.org/10.1145/3550454.3555525">Assemble Them All</a></td><td>Physics-based assembly planning by disassembly</td></tr>
-<tr><td><a href="https://doi.org/10.1109/icra55743.2025.11128440">MatchMaker</a></td><td>Automated asset generation for robotic assembly</td></tr>
-<tr><td><a href="https://openreview.net/forum?id=SQIDlJd3hN">RoboGen</a></td><td>Generative simulation of tasks and data for robot learning</td></tr>
+<tr><td colspan="3"><b>No interactive physics environment</b> · <sub>criterion 1 or 2</sub></td></tr>
+<tr><td><a href="https://arxiv.org/abs/2605.10820">MaD Physics</a></td><td>2026</td><td>Choosing measurements of simulated physical systems that the agent cannot act on, scored by predictions of later states</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2609.01552">SciLaws-Bench</a></td><td>2026</td><td>Scientific law discovery from fixed data or from queries to a simulator that returns a hidden formula plus noise</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2503.15558">Cosmos-Reason1</a></td><td>2025</td><td>Yes-or-no and multiple-choice questions about videos of robots and driving</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=Wmsnx7EPel">EngDesign</a></td><td>2025</td><td>Engineering design answers, scored by task scripts that sometimes run domain simulators</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2506.09849">IntPhys 2</a></td><td>2025</td><td>Judging whether videos are physically possible</td></tr>
+<tr><td><a href="https://doi.org/10.52202/085713-0044">PHYBench</a></td><td>2025</td><td>Physics problem solving, scored against reference answers</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=z6WfQ43sHr">PhyBlock</a></td><td>2025</td><td>Block assembly plans, scored against annotations and never executed in a simulator</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2505.15929">PhyX</a></td><td>2025</td><td>Physics problem solving with images, scored against reference answers</td></tr>
+<tr><td><a href="https://doi.org/10.18653/v1/2025.acl-long.811">PhysReason</a></td><td>2025</td><td>Physics problem solving, scored against reference answers and solution steps</td></tr>
+<tr><td><a href="https://doi.org/10.1109/wacv61042.2026.00099">Physics-IQ</a></td><td>2025</td><td>Video continuations from generative models, compared with real recordings</td></tr>
+<tr><td><a href="https://doi.org/10.1109/iccv51701.2025.00533">STI-Bench</a></td><td>2025</td><td>Spatiotemporal question answering over videos</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=EmLiyZGvrR">UGPhysics</a></td><td>2025</td><td>Undergraduate physics problem solving, scored against reference answers</td></tr>
+<tr><td><a href="https://doi.org/10.1109/iccv51701.2025.00651">3DSRBench</a></td><td>2024</td><td>3D spatial question answering over images</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=tN61DTr4Ed">OSWorld</a></td><td>2024</td><td>Tasks in real computer environments</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=DW8U8ZWa1U">SAT</a></td><td>2024</td><td>Spatial question answering on simulated scenes</td></tr>
+<tr><td><a href="https://doi.org/10.1109/cvpr52734.2025.00994">VSI-Bench</a></td><td>2024</td><td>Spatial question answering over videos</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=zAdUB0aCTQ">AgentBench</a></td><td>2023</td><td>LLM agents across software, game, and web environments</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=fibxvahvs3">GAIA</a></td><td>2023</td><td>Questions for general AI assistants</td></tr>
+<tr><td><a href="https://doi.org/10.24963/ijcai.2024/696">GRASP</a></td><td>2023</td><td>Language grounding and situated physics understanding in videos</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=5Exz7eaBXH">Physion++</a></td><td>2023</td><td>Inferring physical properties from videos</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=VTF8yNQM66">SWE-bench</a></td><td>2023</td><td>Resolving GitHub issues</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=dHng2O0Jjr">ToolBench</a></td><td>2023</td><td>Using real-world APIs</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=oKn9c6ytLx">WebArena</a></td><td>2023</td><td>Tasks on websites</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=PgNEYaIc81Q">ComPhy</a></td><td>2022</td><td>Compositional physical reasoning about objects and events in videos</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=CXyZrKPz4CU">Physion</a></td><td>2021</td><td>Predicting physical outcomes from videos</td></tr>
+<tr><td><a href="https://doi.org/10.1109/cvpr.2017.215">CLEVR</a></td><td>2016</td><td>Visual question answering on rendered scenes</td></tr>
+<tr><td colspan="3"><b>No text-based interaction interface</b> · <sub>criterion 3</sub></td></tr>
+<tr><td><a href="https://doi.org/10.15607/rss.2024.xx.061">HumanoidBench</a></td><td>2024</td><td>Whole-body humanoid locomotion and manipulation</td></tr>
+<tr><td><a href="https://doi.org/10.1177/02783649241304789">FurnitureBench</a></td><td>2023</td><td>Long-horizon furniture assembly by a robot arm</td></tr>
+<tr><td><a href="https://doi.org/10.1109/lra.2023.3330611">RAMP</a></td><td>2023</td><td>Robotic assembly manipulation and planning</td></tr>
+<tr><td><a href="https://doi.org/10.1007/978-3-031-19815-1_6">Break and Make</a></td><td>2022</td><td>Interactive structural understanding with LEGO bricks</td></tr>
+<tr><td><a href="https://proceedings.mlr.press/v155/lin21a.html">SoftGym</a></td><td>2020</td><td>Deformable object manipulation</td></tr>
+<tr><td><a href="https://doi.org/10.1109/icra48506.2021.9560986">IKEA Furniture Assembly</a></td><td>2019</td><td>Long-horizon furniture assembly in simulation</td></tr>
+<tr><td><a href="https://proceedings.mlr.press/v100/yu20a.html">Meta-World</a></td><td>2019</td><td>Multi-task and meta reinforcement learning on tabletop manipulation</td></tr>
+<tr><td><a href="https://proceedings.neurips.cc/paper_files/paper/2019/file/4191ef5f6c1576762869ac49281130c9-Paper.pdf">PHYRE</a></td><td>2019</td><td>2D physics puzzles solved by placing balls, one continuous action vector per attempt for learning agents</td></tr>
+<tr><td><a href="https://arxiv.org/abs/1801.00690">DeepMind Control Suite</a></td><td>2018</td><td>Continuous control tasks</td></tr>
+<tr><td><a href="https://proceedings.mlr.press/v78/dosovitskiy17a.html">CARLA</a></td><td>2017</td><td>Urban driving</td></tr>
+<tr><td colspan="3"><b>Not evaluation suites</b> · <sub>methods and generators</sub></td></tr>
+<tr><td><a href="https://doi.org/10.1109/iccv51701.2025.01373">BrickGPT</a></td><td>2025</td><td>Generating physically stable and buildable brick structures from text</td></tr>
+<tr><td><a href="https://doi.org/10.1109/icra55743.2025.11128440">MatchMaker</a></td><td>2025</td><td>Automated asset generation for robotic assembly</td></tr>
+<tr><td><a href="https://openreview.net/forum?id=SQIDlJd3hN">RoboGen</a></td><td>2023</td><td>Generative simulation of tasks and data for robot learning</td></tr>
+<tr><td><a href="https://doi.org/10.1145/3550454.3555525">Assemble Them All</a></td><td>2022</td><td>Physics-based assembly planning by disassembly</td></tr>
 </tbody>
 </table>
 
