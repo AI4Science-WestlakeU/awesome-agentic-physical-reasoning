@@ -1,0 +1,54 @@
+name: New benchmark
+description: Propose a benchmark for the audit.
+title: "[benchmark] <name>"
+labels: ["candidate"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Benchmark name
+    validations:
+      required: true
+  - type: input
+    id: paper
+    attributes:
+      label: Paper link
+      placeholder: https://arxiv.org/abs/...
+    validations:
+      required: true
+  - type: input
+    id: code
+    attributes:
+      label: Code or project page
+  - type: dropdown
+    id: physics
+    attributes:
+      label: Physics that governs the environment
+      options: [symbolic, simplified, realistic, partial]
+    validations:
+      required: true
+  - type: dropdown
+    id: evaluation
+    attributes:
+      label: How success is decided
+      options: [goal-state, functional, answer, judge, mixed]
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: One line each on the three criteria, with evidence from the paper (LLM agents can be evaluated on it; a physics-governed environment; a text or API action interface).
+    validations:
+      required: true
+  - type: textarea
+    id: capabilities
+    attributes:
+      label: Capability calls
+      description: For GDD, PAP, EE, FE, and CLR, give yes / no / partial / unclear and one sentence of evidence each.
+    validations:
+      required: true
+  - type: textarea
+    id: models
+    attributes:
+      label: Models evaluated and iteration budget

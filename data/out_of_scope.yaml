@@ -1,0 +1,263 @@
+# Out-of-scope examples. scripts/build_readme.py renders them into the Scope section of README.md.
+# The list shows where the scope ends with examples. It is not exhaustive: work missing from it is not thereby in scope.
+#
+# Fields
+#   name      benchmark, dataset, or system
+#   kind      no-physics-environment  no environment governed by physical dynamics for an agent to act in (criteria 1 and 2)
+#             no-text-interface       physical dynamics, but no interface for LLM agents: actions are control signals or action vectors for learning agents (criterion 3)
+#             not-a-benchmark         a method or a generator rather than an evaluation suite
+#   evaluates what the work evaluates or does, in a short phrase
+#   paper     link to the paper
+#   source    where the example comes from: paper Section 3.2, paper Appendix B, or the date it was added here
+
+# Paper, Section 3.2: no interactive physics environment
+
+- name: Physion
+  kind: no-physics-environment
+  evaluates: Predicting physical outcomes from videos
+  paper: https://openreview.net/forum?id=CXyZrKPz4CU
+  source: paper Section 3.2
+
+- name: Physion++
+  kind: no-physics-environment
+  evaluates: Inferring physical properties from videos
+  paper: https://openreview.net/forum?id=5Exz7eaBXH
+  source: paper Section 3.2
+
+- name: ComPhy
+  kind: no-physics-environment
+  evaluates: Compositional physical reasoning about objects and events in videos
+  paper: https://openreview.net/forum?id=PgNEYaIc81Q
+  source: paper Section 3.2
+
+- name: CLEVR
+  kind: no-physics-environment
+  evaluates: Visual question answering on rendered scenes
+  paper: https://doi.org/10.1109/cvpr.2017.215
+  source: paper Section 3.2
+
+- name: IntPhys 2
+  kind: no-physics-environment
+  evaluates: Judging whether videos are physically possible
+  paper: https://arxiv.org/abs/2506.09849
+  source: paper Section 3.2
+
+- name: GRASP
+  kind: no-physics-environment
+  evaluates: Language grounding and situated physics understanding in videos
+  paper: https://doi.org/10.24963/ijcai.2024/696
+  source: paper Section 3.2
+
+- name: PhyBlock
+  kind: no-physics-environment
+  evaluates: Block assembly plans, scored against annotations and never executed in a simulator
+  paper: https://openreview.net/forum?id=z6WfQ43sHr
+  source: paper Section 3.2
+
+- name: SWE-bench
+  kind: no-physics-environment
+  evaluates: Resolving GitHub issues
+  paper: https://openreview.net/forum?id=VTF8yNQM66
+  source: paper Section 3.2
+
+- name: WebArena
+  kind: no-physics-environment
+  evaluates: Tasks on websites
+  paper: https://openreview.net/forum?id=oKn9c6ytLx
+  source: paper Section 3.2
+
+- name: OSWorld
+  kind: no-physics-environment
+  evaluates: Tasks in real computer environments
+  paper: https://openreview.net/forum?id=tN61DTr4Ed
+  source: paper Section 3.2
+
+- name: AgentBench
+  kind: no-physics-environment
+  evaluates: LLM agents across software, game, and web environments
+  paper: https://openreview.net/forum?id=zAdUB0aCTQ
+  source: paper Section 3.2
+
+- name: GAIA
+  kind: no-physics-environment
+  evaluates: Questions for general AI assistants
+  paper: https://openreview.net/forum?id=fibxvahvs3
+  source: paper Section 3.2
+
+- name: ToolBench
+  kind: no-physics-environment
+  evaluates: Using real-world APIs
+  paper: https://openreview.net/forum?id=dHng2O0Jjr
+  source: paper Section 3.2
+
+# Paper, Appendix B: neighboring notions evaluated without an environment to act in
+
+- name: PhysReason
+  kind: no-physics-environment
+  evaluates: Physics problem solving, scored against reference answers and solution steps
+  paper: https://doi.org/10.18653/v1/2025.acl-long.811
+  source: paper Appendix B
+
+- name: PHYBench
+  kind: no-physics-environment
+  evaluates: Physics problem solving, scored against reference answers
+  paper: https://doi.org/10.52202/085713-0044
+  source: paper Appendix B
+
+- name: UGPhysics
+  kind: no-physics-environment
+  evaluates: Undergraduate physics problem solving, scored against reference answers
+  paper: https://openreview.net/forum?id=EmLiyZGvrR
+  source: paper Appendix B
+
+- name: PhyX
+  kind: no-physics-environment
+  evaluates: Physics problem solving with images, scored against reference answers
+  paper: https://arxiv.org/abs/2505.15929
+  source: paper Appendix B
+
+- name: VSI-Bench
+  kind: no-physics-environment
+  evaluates: Spatial question answering over videos
+  paper: https://doi.org/10.1109/cvpr52734.2025.00994
+  source: paper Appendix B
+
+- name: 3DSRBench
+  kind: no-physics-environment
+  evaluates: 3D spatial question answering over images
+  paper: https://doi.org/10.1109/iccv51701.2025.00651
+  source: paper Appendix B
+
+- name: SAT
+  kind: no-physics-environment
+  evaluates: Spatial question answering on simulated scenes
+  paper: https://openreview.net/forum?id=DW8U8ZWa1U
+  source: paper Appendix B
+
+- name: STI-Bench
+  kind: no-physics-environment
+  evaluates: Spatiotemporal question answering over videos
+  paper: https://doi.org/10.1109/iccv51701.2025.00533
+  source: paper Appendix B
+
+- name: Physics-IQ
+  kind: no-physics-environment
+  evaluates: Video continuations from generative models, compared with real recordings
+  paper: https://doi.org/10.1109/wacv61042.2026.00099
+  source: paper Appendix B
+
+- name: Cosmos-Reason1
+  kind: no-physics-environment
+  evaluates: Yes-or-no and multiple-choice questions about videos of robots and driving
+  paper: https://arxiv.org/abs/2503.15558
+  source: paper Appendix B
+
+# Added to this list after the paper
+
+- name: EngDesign
+  kind: no-physics-environment
+  evaluates: Engineering design answers, scored by task scripts that sometimes run domain simulators
+  paper: https://openreview.net/forum?id=Wmsnx7EPel
+  source: added 2026-11-05
+
+- name: SciLaws-Bench
+  kind: no-physics-environment
+  evaluates: Scientific law discovery from fixed data or from queries to a simulator that returns a hidden formula plus noise
+  paper: https://arxiv.org/abs/2609.01552
+  source: added 2026-11-05
+
+- name: MaD Physics
+  kind: no-physics-environment
+  evaluates: Choosing measurements of simulated physical systems that the agent cannot act on, scored by predictions of later states
+  paper: https://arxiv.org/abs/2605.10820
+  source: added 2026-11-05
+
+# Paper, Section 3.2: no text-based interaction interface
+
+- name: FurnitureBench
+  kind: no-text-interface
+  evaluates: Long-horizon furniture assembly by a robot arm
+  paper: https://doi.org/10.1177/02783649241304789
+  source: paper Section 3.2
+
+- name: IKEA Furniture Assembly
+  kind: no-text-interface
+  evaluates: Long-horizon furniture assembly in simulation
+  paper: https://doi.org/10.1109/icra48506.2021.9560986
+  source: paper Section 3.2
+
+- name: RAMP
+  kind: no-text-interface
+  evaluates: Robotic assembly manipulation and planning
+  paper: https://doi.org/10.1109/lra.2023.3330611
+  source: paper Section 3.2
+
+- name: Break and Make
+  kind: no-text-interface
+  evaluates: Interactive structural understanding with LEGO bricks
+  paper: https://doi.org/10.1007/978-3-031-19815-1_6
+  source: paper Section 3.2
+
+- name: DeepMind Control Suite
+  kind: no-text-interface
+  evaluates: Continuous control tasks
+  paper: https://arxiv.org/abs/1801.00690
+  source: paper Section 3.2
+
+- name: HumanoidBench
+  kind: no-text-interface
+  evaluates: Whole-body humanoid locomotion and manipulation
+  paper: https://doi.org/10.15607/rss.2024.xx.061
+  source: paper Section 3.2
+
+- name: Meta-World
+  kind: no-text-interface
+  evaluates: Multi-task and meta reinforcement learning on tabletop manipulation
+  paper: https://proceedings.mlr.press/v100/yu20a.html
+  source: paper Section 3.2
+
+- name: SoftGym
+  kind: no-text-interface
+  evaluates: Deformable object manipulation
+  paper: https://proceedings.mlr.press/v155/lin21a.html
+  source: paper Section 3.2
+
+- name: CARLA
+  kind: no-text-interface
+  evaluates: Urban driving
+  paper: https://proceedings.mlr.press/v78/dosovitskiy17a.html
+  source: paper Section 3.2
+
+# Paper, Appendix B: no interface for LLM agents
+
+- name: PHYRE
+  kind: no-text-interface
+  evaluates: 2D physics puzzles solved by placing balls, one continuous action vector per attempt for learning agents
+  paper: https://proceedings.neurips.cc/paper_files/paper/2019/file/4191ef5f6c1576762869ac49281130c9-Paper.pdf
+  source: paper Appendix B
+
+# Paper, Section 3.2: not evaluation suites
+
+- name: BrickGPT
+  kind: not-a-benchmark
+  evaluates: Generating physically stable and buildable brick structures from text
+  paper: https://doi.org/10.1109/iccv51701.2025.01373
+  source: paper Section 3.2
+
+- name: Assemble Them All
+  kind: not-a-benchmark
+  evaluates: Physics-based assembly planning by disassembly
+  paper: https://doi.org/10.1145/3550454.3555525
+  source: paper Section 3.2
+
+- name: MatchMaker
+  kind: not-a-benchmark
+  evaluates: Automated asset generation for robotic assembly
+  paper: https://doi.org/10.1109/icra55743.2025.11128440
+  source: paper Section 3.2
+
+- name: RoboGen
+  kind: not-a-benchmark
+  evaluates: Generative simulation of tasks and data for robot learning
+  paper: https://openreview.net/forum?id=SQIDlJd3hN
+  source: paper Section 3.2
