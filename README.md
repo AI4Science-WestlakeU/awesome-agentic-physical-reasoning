@@ -22,7 +22,7 @@ Companion to the NeurIPS 2026 position paper *Evaluating Physical Reasoning in L
 An evaluation of physical reasoning must meet two minimum requirements.
 
 1. **Functional verification.** Physics judges the outcome. The artifact the agent produces, such as a structure or a machine, works or it does not.
-2. **Realistic physics.** Gravity, friction, and collision constrain every action along the way.
+2. **Realistic physics.** Physical laws, including gravity, friction, and collision, constrain every action along the way.
 
 Together they form one standard. It prescribes no kind of task; in the audit so far, every benchmark that meets it is a construction benchmark, in which the agent builds an artifact. The audit also tracks five capabilities along the agent's loop from goal to verified artifact.
 
