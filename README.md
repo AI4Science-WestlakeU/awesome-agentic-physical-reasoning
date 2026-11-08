@@ -11,7 +11,13 @@ A living audit of agentic physical reasoning (APR) benchmarks, which test LLM ag
 
 Companion to the NeurIPS 2026 position paper *Evaluating Physical Reasoning in LLM Agents Requires Construction Benchmarks* ([project page](https://ai4science-westlakeu.github.io/APR/) · [OpenReview](https://openreview.net/forum?id=42PVaAYxLX)). The paper audits 11 benchmarks against one standard and five capabilities. This repository keeps that audit current after the paper is frozen: new benchmarks are assessed against the same standard and capabilities and added through issues and pull requests.
 
+- **What APR is.** Agentic physical reasoning (APR) is the physical reasoning of LLM agents, an ability rooted in physical intelligence. When an agent acts step by step in a physical environment, physics decides the consequences of each action. The reasoning lies in predicting these consequences and in judging which actions are feasible under physical constraints.
+- **What APR is not.** Solving physics problems on paper. A model doing so also works step by step, yet it derives an answer to a stated problem, and no physical scene responds to its steps.
+- **Related notions.** See more about how APR relates to neighboring notions of physical intelligence in Appendix B of the paper, which covers intuitive physics ([IntPhys 2](https://arxiv.org/abs/2506.09849), [Physion](https://arxiv.org/abs/2106.08261)) and embodied reasoning ([Cosmos-Reason1](https://arxiv.org/abs/2503.15558)), among others.
+
 ## The standard
+
+<p align="center"><img src="assets/physical-benchmark-gaps.gif" alt="Two gaps in current physical benchmarks. (a) A structure that matches the goal configuration fails the functional test once physics runs. (b) Removing a support has no consequence under simplified physics, while under realistic physics the error propagates." width="100%"></p>
 
 An evaluation of physical reasoning must meet two minimum requirements.
 
