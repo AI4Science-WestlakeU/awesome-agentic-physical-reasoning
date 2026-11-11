@@ -68,17 +68,18 @@ def table(items):
     head = ('<table>\n<thead><tr><th align="left">Benchmark</th>'
             + "".join(f'<th align="center">{c}</th>' for c in CAPS)
             + '<th align="left">Physics</th><th align="left">Evaluation</th><th align="center">Both</th></tr></thead>\n<tbody>')
-    lines, notes = [head], []
+    # Footnotes are numbered in the order of the records in the YAML, so a number stays with its record when rows move.
+    noted = [b for b in items if b.get("footnote")]
+    number = {id(b): i for i, b in enumerate(noted, 1)}
+    lines, notes = [head], [b["footnote"] for b in noted]
     for cls, detail in CLASSES:
         group = [b for b in items if b["class"] == cls]
         if not group:
             continue
         lines.append(group_row(cls, detail))
         for b in sorted(group, key=lambda b: (-b["year"], b["name"])):
-            mark = ""
-            if b.get("footnote"):
-                notes.append(b["footnote"])
-                mark = f"<sup>[{len(notes)}]</sup>"
+            # &#8288; is a word joiner: it keeps the mark on the same line as the end of the name
+            mark = f"&#8288;<sup>[{number[id(b)]}]</sup>" if b.get("footnote") else ""
             lines.append(row(b, mark))
     lines.append("</tbody>\n</table>")
     if notes:

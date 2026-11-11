@@ -10,6 +10,8 @@
 #                 Embodied acts toward a goal; a mixed suite takes the class of most of its tasks;
 #                 the class does not decide meets_standard)
 #   footnote      optional; printed under the table, for example the other tasks of a mixed suite
+#                 (tasks of a mixed suite that belong to another class and are scored on their own may also be recorded
+#                 as a separate record named after the suite, such as "RLE-Bench (Construction Subset)")
 #   physics       symbolic | simplified | realistic | partial     (what governs the environment; 2D rigid-body engines count as realistic;
 #                 partial = physics governs only some tasks, or checks only some properties of the result)
 #   evaluation    goal-state | functional | answer | judge | mixed  (how success is decided)
@@ -241,6 +243,21 @@
   notes: Coding agents develop artifacts through a shell harness and robot APIs in mostly MuJoCo-based simulators for two to nine hours per task, and a hidden verifier scores each artifact in simulation, with no learned or human judge. Physics judges function in four building tasks, a tower and a cantilever that the agent stacks with a robot arm, a mobile base, and gravity compensation for a leader arm. In the mobile-base design, most models pass the structural checks, yet all nine score zero on the static stability margin.
   footnote: RLE-Bench mixes task forms and takes the class of most of its 51 tasks, which are robot control, policy development, and perception. Four of its tasks are construction scored by physics in simulation. In them the agent builds a tower and a cantilever with a robot arm, designs a mobile base, and designs gravity compensation for a leader arm.
   assessed: 2026-11-05
+  assessed_by: maintainer draft (full text read), pending author review
+
+- name: RLE-Bench (Construction Subset)
+  status: candidate
+  year: 2026
+  class: Construction
+  physics: realistic
+  evaluation: functional
+  capabilities: {GDD: yes, PAP: partial, EE: partial, FE: yes, CLR: partial}
+  meets_standard: yes
+  paper: https://arxiv.org/abs/2609.34210
+  code: https://github.com/RLE-Bench/RLE-Bench
+  notes: The four construction tasks of RLE-Bench, in MuJoCo-based simulators. In the tower and the cantilever the agent stacks pieces step by step with a robot arm from RGB views and proprioception, and the reward is the "settled height or overhang divided by the analytic optimum"; the mobile base and the leader-arm gravity compensation are submitted as MJCF designs with controller code, and a hidden verifier scores stability, reach under load, hold, backdrive, and push recovery in simulation, with 35% of the mobile-base reward going to design and resource use. Resets (tower, cantilever) and preview scenes or analysis helpers (the two designs) allow revision within budgets of two to nine hours, while the verifier's checks stay hidden.
+  footnote: RLE-Bench (Construction Subset) covers the four construction tasks of RLE-Bench, which physics scores in simulation. In them the agent builds a tower and a cantilever with a robot arm, designs a mobile base, and designs gravity compensation for a leader arm. The full suite of 51 tasks is the RLE-Bench row under Embodied.
+  assessed: 2026-11-11
   assessed_by: maintainer draft (full text read), pending author review
 
 - name: LMBuild
