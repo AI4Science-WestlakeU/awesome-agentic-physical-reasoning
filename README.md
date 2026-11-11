@@ -169,7 +169,7 @@ How to read the tables:
 <tr><td><a href="https://arxiv.org/abs/2610.04292">LMBuild</a> <sub>2026 · <a href="https://github.com/Lumos-Jiateng/LMBuild">code</a></sub></td><td align="center">✓</td><td align="center">◐</td><td align="center">✗</td><td align="center">◐</td><td align="center">✓</td><td>partial</td><td>mixed</td><td align="center">◐</td></tr>
 <tr><td><a href="https://arxiv.org/abs/2608.14441">PACE-Bench</a> <sub>2026 · <a href="https://github.com/thunlp/PACE-Bench">code</a></sub></td><td align="center">✓</td><td align="center">✓</td><td align="center">✗</td><td align="center">✓</td><td align="center">✓</td><td>realistic</td><td>functional</td><td align="center">✓</td></tr>
 <tr><td><a href="https://arxiv.org/abs/2609.21493">PolyBridgeBench</a> <sub>2026</sub></td><td align="center">✓</td><td align="center">✗</td><td align="center">✗</td><td align="center">✓</td><td align="center">✓</td><td>realistic</td><td>functional</td><td align="center">✓</td></tr>
-<tr><td><a href="https://arxiv.org/abs/2609.34210">RLE-Bench (Construction Subset)</a>&#8288;<sup>[2]</sup> <sub>2026 · <a href="https://github.com/RLE-Bench/RLE-Bench">code</a></sub></td><td align="center">✓</td><td align="center">◐</td><td align="center">◐</td><td align="center">✓</td><td align="center">◐</td><td>realistic</td><td>functional</td><td align="center">✓</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2609.34210">RLE-Bench (Subset)</a>&#8288;<sup>[2]</sup> <sub>2026 · <a href="https://github.com/RLE-Bench/RLE-Bench">code</a></sub></td><td align="center">✓</td><td align="center">◐</td><td align="center">◐</td><td align="center">✓</td><td align="center">◐</td><td>realistic</td><td>functional</td><td align="center">✓</td></tr>
 <tr><td colspan="9"><b>Embodied</b> · <sub>realistic physics, acting toward goals</sub></td></tr>
 <tr><td><a href="https://arxiv.org/abs/2603.22435">CaP-X</a> <sub>2026 · <a href="https://github.com/capgym/cap-x">code</a></sub></td><td align="center">✗</td><td align="center">◐</td><td align="center">◐</td><td align="center">✗</td><td align="center">✓</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
 <tr><td><a href="https://arxiv.org/abs/2609.33807">CodeActionBench</a> <sub>2026 · <a href="https://github.com/lyhkk/CodeActionBench">code</a></sub></td><td align="center">✗</td><td align="center">◐</td><td align="center">✓</td><td align="center">✗</td><td align="center">✓</td><td>realistic</td><td>goal-state</td><td align="center">✗</td></tr>
@@ -204,7 +204,7 @@ How to read the tables:
 <summary><sub>Notes (2)</sub></summary>
 
 <sub>[1] RLE-Bench mixes task forms and takes the class of most of its 51 tasks, which are robot control, policy development, and perception. Four of its tasks are construction scored by physics in simulation. In them the agent builds a tower and a cantilever with a robot arm, designs a mobile base, and designs gravity compensation for a leader arm.</sub><br>
-<sub>[2] RLE-Bench (Construction Subset) covers the four construction tasks of RLE-Bench, which physics scores in simulation. In them the agent builds a tower and a cantilever with a robot arm, designs a mobile base, and designs gravity compensation for a leader arm. The full suite of 51 tasks is the RLE-Bench row under Embodied.</sub>
+<sub>[2] This row covers the four construction tasks of RLE-Bench, which physics scores in simulation. In them the agent builds a tower and a cantilever with a robot arm, designs a mobile base, and designs gravity compensation for a leader arm. The full suite of 51 tasks is the RLE-Bench row under Embodied.</sub>
 
 </details>
 <!-- AUDIT:END -->
@@ -215,7 +215,7 @@ Open an issue with the [*New benchmark*](../../issues/new?template=new-benchmark
 
 ## Changelog
 
-- 2026-11-11 · The four construction tasks of RLE-Bench listed on their own in the Construction group as RLE-Bench (Construction Subset). The full suite stays under Embodied.
+- 2026-11-11 · The four construction tasks of RLE-Bench listed on their own in the Construction group as RLE-Bench (Subset). The full suite stays under Embodied.
 - 2026-11-05 · 24 candidates added, three of them released before the paper's submission but not in its audit (DeepPHY, ESPIRE, CaP-X). Out-of-scope examples listed under Scope. Classes follow physics and task.
 - 2026-10-14 · Six candidates assessed from texts released after the paper's audit (ArtifactArena, PACE-Bench, PolyBridgeBench, RLE-Bench, LMBuild, BrickBench). BuildArena re-assessed on its later version, whose optional closed-loop protocol tests closed-loop refinement.
 - 2026-01-29 · Initial audit: the 11 benchmarks of Table 2 in the paper.
