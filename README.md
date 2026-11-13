@@ -26,7 +26,11 @@ An evaluation of physical reasoning must meet two minimum requirements.
 
 <p align="center"><img src="assets/physical-benchmark-gaps.gif" alt="Two gaps in current physical benchmarks. (a) A structure that matches the goal configuration fails the functional test once physics runs. (b) Removing a support has no consequence under simplified physics, while under realistic physics the error propagates." width="100%"></p>
 
-Together they form one standard. We hold every benchmark to it regardless of its task, and in the audit released with the paper, those that meet it are construction benchmarks, in which the agent builds an artifact. The audit also tracks five capabilities along the agent's loop from goal to verified artifact.
+Together they form one standard. It is functional verification under realistic physics. Construction tasks naturally meet it, and other tasks can as well. Here we take construction as the example:
+
+<p align="center"><img src="assets/functional-verification.png" alt="Functional verification in three examples. A vehicle must carry a test payload from one site to another. A rocket must reach a target altitude. A bridge must bear the load that crosses it." width="100%"></p>
+
+We hold every benchmark to it regardless of its task, and in the audit released with the paper, those that meet it are construction benchmarks, in which the agent builds an artifact. The audit also tracks five capabilities along the agent's loop from goal to verified artifact.
 
 | Capability | Tests whether the agent can |
 |---|---|
